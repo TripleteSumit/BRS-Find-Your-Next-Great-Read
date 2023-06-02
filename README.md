@@ -70,7 +70,7 @@ The project utilizes the following libraries:
 
 **Deploy Link**
 
-Live Link: [BRS - Find Your Next Great Read](https://www.kaggle.com/datasets/arashnic/book-recommendation-dataset)
+Live Link: [BRS - Find Your Next Great Read](https://github.com/svamptra)
 
 **CONCLUSION**
 
