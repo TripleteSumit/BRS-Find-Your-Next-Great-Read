@@ -4,7 +4,8 @@ import pickle as pk
 import numpy as np
 
 
-app = Flask("__name__")
+
+application = Flask("__name__")
 
 book_data = pk.load(open('TopBook.pkl', 'rb'))
 
@@ -16,7 +17,7 @@ p_table = pk.load(open('p_Table.pkl','rb'))
 
 
 
-@app.route('/')
+@application.route('/')
 def index():
     return render_template('index.html',
                            book_name = list(book_data['Book-Title'].values),
@@ -25,11 +26,11 @@ def index():
                            book_rating = list(book_data['Rating'].values)
                             )
 
-@app.route('/recommend')
+@application.route('/recommend')
 def recommend_book():
     return render_template('recommend.html')
 
-@app.route('/recommend_books',methods=['post'])
+@application.route('/recommend_books',methods=['post'])
 def recom():
     user_input = request.form.get('user_input')
     if user_input in filter_books['Book-Title'].values:
@@ -51,5 +52,5 @@ def recom():
         return render_template('recommend.html',data = [])
 
 
-if __name__ == "__main__":
-    app.run(debug=True)
+# if __name__ == "__main__":
+#     app.run(debug=True)
